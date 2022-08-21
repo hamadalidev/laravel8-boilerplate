@@ -3,10 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class GameType extends Model
+/**
+ * Class GameType
+ * @package App\Models
+ *
+ * @property string name
+ */
+class GameType extends AbstractModel
 {
     use HasFactory, SoftDeletes;
 
