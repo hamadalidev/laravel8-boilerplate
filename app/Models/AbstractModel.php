@@ -25,6 +25,7 @@ use Illuminate\Support\Str;
  */
 abstract class AbstractModel extends Model
 {
+    public static $snakeAttributes = false;
 
     /**
      * The attributes excluded from the model's JSON form.
