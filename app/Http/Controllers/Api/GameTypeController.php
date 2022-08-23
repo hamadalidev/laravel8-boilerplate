@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Services\GameTypeService;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,19 @@ use Illuminate\Http\Request;
  */
 class GameTypeController extends Controller
 {
+    /**
+     * @var GameTypeService
+     */
+    private $gameTypeService;
+
+    /**
+     * @param GameTypeService $gameTypeService
+     */
+    public function __construct(GameTypeService $gameTypeService)
+    {
+        $this->gameTypeService = $gameTypeService;
+    }
+
     /**
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
@@ -72,6 +86,6 @@ class GameTypeController extends Controller
      */
     private function resource($method, $data)
     {
-        
+
     }
 }
