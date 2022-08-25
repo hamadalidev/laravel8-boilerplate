@@ -7,7 +7,7 @@ use App\Models\GameType;
 use App\Repositories\GameTypeRepository;
 use Illuminate\Validation\Rule;
 
-class GameTypeRequest
+class GameTypeRequest extends AbstractFormRequest
 {
     /**
      * @var array
