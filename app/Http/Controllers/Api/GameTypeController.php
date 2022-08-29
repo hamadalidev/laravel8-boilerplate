@@ -31,6 +31,7 @@ class GameTypeController extends Controller
      */
     public function index()
     {
+        dd('d');
 
     }
 
