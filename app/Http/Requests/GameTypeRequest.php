@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Exceptions\AuthorizationException;
 use App\Models\GameType;
 use App\Repositories\GameTypeRepository;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Validation\Rule;
 
 class GameTypeRequest extends AbstractFormRequest

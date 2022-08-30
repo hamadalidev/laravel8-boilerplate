@@ -144,7 +144,9 @@ abstract class AbstractFormRequest extends FormRequest implements FormRequestInt
      */
     protected function isAuthorized(string $actionName): bool
     {
-        return Gate::forUser($this->user())->allows($actionName, $this->isModel() ? $this->getModel() : $this->getModelClass());
+        // to add spati role and permision.
+//        return Gate::forUser($this->user())->allows($actionName, $this->isModel() ? $this->getModel() : $this->getModelClass());
+        return true;
     }
 
     /**

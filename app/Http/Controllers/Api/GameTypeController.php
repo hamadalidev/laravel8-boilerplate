@@ -13,26 +13,12 @@ use Illuminate\Http\Request;
 class GameTypeController extends Controller
 {
     /**
-     * @var GameTypeService
-     */
-    private $gameTypeService;
-
-    /**
-     * @param GameTypeService $gameTypeService
-     */
-    public function __construct(GameTypeService $gameTypeService)
-    {
-        $this->gameTypeService = $gameTypeService;
-    }
-
-    /**
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(GameTypeService $gameTypeService)
     {
         dd('d');
-
     }
 
     /**

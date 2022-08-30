@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\GameTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,9 @@ Route::post('auth/login', [App\Http\Controllers\Api\AuthController::class, 'logi
 Route::group(['middleware' => ['apiJwt']], function(){
     Route::post('auth/logout', [App\Http\Controllers\Api\AuthController::class, 'logout']);
     Route::get('users', [App\Http\Controllers\Api\UserController::class, 'index']);
+
+    Route::prefix('gametype')->group(function () {
+        Route::get('/', [GameTypeController::class, 'index'])->name('gametype.index');
+    });
 });
 
