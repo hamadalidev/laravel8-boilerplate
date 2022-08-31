@@ -230,7 +230,7 @@ abstract class AbstractFormRequest extends FormRequest implements FormRequestInt
      */
     protected function isActionAllowed(): bool
     {
-        if (array_get($this->allowedActions, 0) === '*') {
+        if ($this->allowedActions[0] === '*') {
             return true;
         }
 
