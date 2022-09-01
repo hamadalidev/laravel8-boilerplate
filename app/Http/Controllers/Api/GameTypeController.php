@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\GameType\GameTypeResource;
+use App\Http\Resources\GameType\GameTypeResourceCollection;
 use App\Services\GameTypeService;
 use Illuminate\Http\Request;
 
@@ -16,9 +18,9 @@ class GameTypeController extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index(GameTypeService $gameTypeService)
+    public function index(GameTypeService $service)
     {
-        dd('d');
+        return $this->resource('collection', $service->paginate());
     }
 
     /**
@@ -73,6 +75,8 @@ class GameTypeController extends Controller
      */
     private function resource($method, $data)
     {
-
+        return ($method === 'collection')
+            ? new GameTypeResourceCollection($data)
+            : new GameTypeResource($data);
     }
 }
